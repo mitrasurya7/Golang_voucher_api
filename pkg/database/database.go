@@ -30,3 +30,13 @@ func Connect() {
 	DB = db
 	fmt.Println("Database connected!")
 }
+
+func DatabaseConnectTest() {
+	db, err := gorm.Open(postgres.Open("host=localhost user=root password=secret dbname=golang_voucher port=5432 sslmode=disable"), &gorm.Config{})
+	if err != nil {
+		fmt.Println("Failed to connect to database:", err)
+	} else {
+		fmt.Println("Database connected!")
+	}
+	DB = db
+}

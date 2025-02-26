@@ -15,7 +15,7 @@ import (
 
 func TestCreateBrandHandler(t *testing.T) {
 
-	database.Connect()
+	database.DatabaseConnectTest()
 	router := gin.Default()
 	router.POST("/brand", brand.CreateBrandHandler)
 
